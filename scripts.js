@@ -1,6 +1,6 @@
 // scripts.js
 
-// Event listener for skjemaet
+// Eventlistener for skjemaet
 document.getElementById("myForm").addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -8,22 +8,22 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
   const who = document.getElementById("who").value;
   const message = document.getElementById("message").value;
 
-  // Send e-post via EmailJS
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  // Send e-post via EmailJS med dine ID-er
+  emailjs.send("service_rclhyuc", "template_f8ztu7d", {
     processNumber: processNumber,
     who: who,
     message: message
   }).then(function(response) {
     alert("Tilbakemelding sendt!");
   }, function(error) {
-    alert("Det oppstod en feil: " + JSON.stringify(error));
+    alert("Feil oppstod: " + JSON.stringify(error));
   });
 
-  // Nullstill skjemaet etter sending
+  // Resett skjema
   document.getElementById("myForm").reset();
 });
 
-// Funksjon for å vise/skjule tilbakemeldingsskjemaet
+// Funksjon for å vise/skjule skjema
 function toggleFeedbackForm() {
   const form = document.getElementById("feedback-form");
   const overlay = document.getElementById("overlay");
