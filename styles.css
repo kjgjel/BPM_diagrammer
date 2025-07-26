@@ -1,1 +1,290 @@
-kkkkkk
+/* styles.css */
+
+/* Reset og grunnstil */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Header med miljøprofil og tittel */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #00796b;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+/* Miljøprofil tekst */
+#environment-profile {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 20px;
+  flex: 1 1 100%;
+}
+
+#title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1 1 100%;
+}
+
+/* Container for innholdet */
+#container {
+  display: flex;
+  margin-top: 80px; /* tar høyde for header */
+  width: 100%;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+/* Side meny / filstruktur */
+#file-structure {
+  width: 18%;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  min-height: calc(100vh - 100px);
+}
+
+#file-structure h3 {
+  margin-bottom: 10px;
+  color: #00796b;
+  font-size: 16px;
+}
+
+#file-structure ul {
+  list-style: none;
+}
+
+#file-structure li {
+  margin-bottom: 8px;
+}
+
+#file-structure a {
+  text-decoration: none;
+  color: #555;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#file-structure a:hover {
+  background-color: #e0f2f1;
+  color: #00796b;
+}
+
+.folder-icon {
+  margin-right: 8px;
+}
+
+/* Main innhold for diagram og PDF */
+#main-content {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  min-height: calc(100vh - 100px);
+}
+
+/* Diagram område */
+#diagram {
+  flex: 2;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#diagram h3 {
+  padding: 10px;
+  background-color: #00796b;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#diagram iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+}
+
+/* PDF visning */
+#pdf-viewer {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#pdf-viewer h3 {
+  padding: 10px;
+  background-color: #00796b;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#pdf-viewer iframe {
+  flex: 1;
+  border: none;
+}
+
+/* Knapp for tilbakemelding */
+#feedback-btn {
+  margin-top: 10px;
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+#feedback-btn:hover {
+  background-color: #004d40;
+}
+
+/* Feedback modal og overlay */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 998;
+}
+
+#feedback-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+#feedback-form h3 {
+  margin-bottom: 15px;
+  color: #00796b;
+}
+
+#feedback-form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#feedback-form input,
+#feedback-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 14px;
+}
+
+#feedback-form textarea {
+  resize: vertical;
+}
+
+#feedback-form button {
+  margin-top: 15px;
+  background-color: #00796b;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+#feedback-form button:hover {
+  background-color: #004d40;
+}
+
+/* Responsiv CSS for mindre skjermer */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #header {
+    position: relative;
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #environment-profile {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  #title {
+    font-size: 18px;
+  }
+
+  #container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  #file-structure {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #main-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #diagram, #pdf-viewer {
+    width: 100%;
+  }
+
+  #feedback-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
