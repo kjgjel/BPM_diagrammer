@@ -37,3 +37,6 @@ function toggleFeedbackForm() {
     overlay.style.display = "block";
   }
 }
+
+// Initialiser EmailJS med din User ID (Public Key)
+emailjs.init("yvY21hA8XaG3QMy2");
