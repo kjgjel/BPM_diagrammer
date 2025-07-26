@@ -1,1 +1,111 @@
-kkkkkkkkkkk
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BPMN Diagrammer</title>
+<!-- Font Awesome for ikoner -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<!-- Google Fonts for et moderne utseende -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+
+<!-- Ekstern CSS -->
+<link rel="stylesheet" href="styles.css" />
+
+<!-- EmailJS -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("YOUR_USER_ID"); // Sett inn din User ID her
+  })();
+</script>
+</head>
+<body>
+
+<!-- Header med miljøprofil og tittel -->
+<div id="header">
+  <div id="environment-profile">Ikke lov å kopiere fra siden før en har skriftlig tillatelse fra E2esolutions</div>
+  <div id="title">BPMN Diagrammer</div>
+</div>
+
+<!-- Hovedinnhold -->
+<div id="container">
+  <!-- Side meny / filstruktur -->
+  <div id="file-structure">
+    <h3>Filer</h3>
+    <ul>
+      <li><strong>E2E Prosesser</strong>
+        <ul>
+          <li><a href="E2E%20prosesser/E2E%20Vedlikehold.html" target="diagram-frame">E2E Vedlikehold</a></li>
+          <li><a href="E2E%20prosesser/E2E%20Drift.html" target="diagram-frame">E2E Drift</a></li>
+        </ul>
+      </li>
+      <li><strong>Vedlikehold</strong>
+        <ul>
+          <li><a href="Vedlikehold/OM200.001_opprette_notifikasjon.html" target="diagram-frame"><i class="fas fa-folder folder-icon"></i>OM200.001 - Opprette Notifikasjon</a></li>
+          <li><a href="Vedlikehold/OM200.002_oppdatere_vedlikeholdsplan.html" target="diagram-frame"><i class="fas fa-folder folder-icon"></i>OM200.002 - Oppdatere Vedlikeholdsplan</a></li>
+        </ul>
+      </li>
+      <li><strong>Drift</strong>
+        <ul>
+          <li><a href="drift/OM300.001_oppstart_hydroforanlegget.html" target="diagram-frame"><i class="fas fa-folder folder-icon"></i>OM300.001 - Oppstart Hydroforanlegget</a></li>
+          <li><a href="drift/OM300.002_stenge_hydroforanlegget.html" target="diagram-frame"><i class="fas fa-folder folder-icon"></i>OM300.002 - Stenge Hydroforanlegget</a></li>
+        </ul>
+      </li>
+      <li><strong>PDF Filer</strong>
+        <ul>
+          <li>
+            <a href="https://1drv.ms/b/c/36633548199ab6ed/IQQCKFyJpJ6TQJQvmG8sEpQoAXcsWSQ0dLENRUH83DjwtN0" target="pdf-frame">
+              <i class="fas fa-file-pdf folder-icon"></i>SOP_Dokument_1
+            </a>
+          </li>
+          <li>
+            <a href="https://1drv.ms/b/c/36633548199ab6ed/IQTbXcc3wTmKSLAk0AcfRC5sAXdWgVXq_HRTNRdgo5ffWIE" target="pdf-frame">
+              <i class="fas fa-file-pdf folder-icon"></i> bruksendring
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li><strong>BPMN Dashboard</strong>
+        <ul>
+          <li><a href="Bpmn_dashbord/dashbord_1.html" target="_blank"><i class="fas fa-folder folder-icon"></i>Dashboard 1</a></li>
+          <li><a href="Bpmn_dashbord/dashbord_2.html" target="_blank"><i class="fas fa-folder folder-icon"></i>Dashboard 2</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button id="feedback-btn" onclick="toggleFeedbackForm()">Gi Tilbakemelding</button>
+  </div>
+
+  <!-- Diagram og PDF visning -->
+  <div id="main-content">
+    <div id="diagram">
+      <h3>BPMN Diagram</h3>
+      <iframe name="diagram-frame" src="path/to/your/default_diagram.html"></iframe>
+    </div>
+    <div id="pdf-viewer">
+      <h3>PDF Visning</h3>
+      <iframe name="pdf-frame" src=""></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Feedback modal -->
+<div id="overlay" onclick="toggleFeedbackForm()"></div>
+<div id="feedback-form">
+  <h3>Tilbakemelding</h3>
+  <form id="myForm">
+    <label for="processNumber">Nummer på prosess:</label>
+    <input type="text" id="processNumber" name="processNumber" required />
+    <label for="who">Hvem:</label>
+    <input type="text" id="who" name="who" required />
+    <label for="message">Tilbakemelding (maks 200 ord):</label>
+    <textarea id="message" name="message" rows="4" maxlength="200" required></textarea>
+    <button type="submit">Send Tilbakemelding</button>
+  </form>
+</div>
+
+<!-- JS -->
+<script src="scripts.js"></script>
+
+</body>
+</html>
