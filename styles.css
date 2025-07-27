@@ -134,7 +134,7 @@ body {
   width: 100%;
 }
 
-/* PDF visning område */
+/* PDF visning */
 #pdf-viewer {
   flex: 1;
   background-color: #fff;
